@@ -1,0 +1,377 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.scroll-container {
+    margin: 0 auto;
+    display: grid;
+    grid-auto-flow: row;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    scroll-snap-type: y mandatory;
+}
+
+.scroll-container .scroll-area {
+    scroll-snap-align: center;
+}
+
+.top-navbar {
+    display: grid;
+    width: 100%;
+    height: 10vh;
+    min-height: 60px;
+    max-height: 10vh;
+    grid-template: 1fr / 100px 4fr 100px;
+    position: fixed;
+    z-index: 1000;
+   
+}
+
+.box.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.box.logo img{
+    height: 30px;
+    position: relative;
+}
+
+.box.hamburger-menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+#menu_checkbox {
+    display: none;
+  }
+  
+  label {
+    position:relative;
+    display: block;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+label div {
+    position: relative;
+    top: 0;
+    height: 1.5px;
+    background-color: black;
+    margin-bottom: 7.75px;
+    transition: 0.3s ease-in-out;
+  }
+  
+  label div:first-child {
+    transform-origin: 0px
+  }
+  
+  label div:last-child {
+    margin-bottom: 0;
+    transform-origin: 20px;
+  }
+  
+  label div:nth-child(2) {
+    width: 20px;
+    right: 0;
+  }
+
+  #menu_checkbox:checked + label div:first-child {
+    top: -0.75px;
+    transform: rotateZ(45deg);
+  }
+  
+  #menu_checkbox:checked + label div:last-child {
+    top: 0.75px;
+    transform: rotateZ(45deg);
+  }
+  
+  #menu_checkbox:checked + label div:nth-child(2) {
+    width: 28.284px;
+    right: 4.142px;
+    transform: rotateZ(-45deg);
+  }
+
+/* .box.hamburger-menu::after {
+    content: '';
+    width: 20px;
+    height: 1.5px;
+    background-color: black;
+    margin: 5px;
+    border-radius: 0.5px;
+}
+*/
+
+/* .box.hamburger-menu::before {
+    content: '';
+    width: 20px;
+    height: 1.5px;
+    background-color: black;
+    border-radius: 0.5px;
+}
+
+*/
+
+.hero-content {
+    background-color: #ffffff;
+    height: 100vh;
+    width: 100%;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    position:relative;
+    z-index: -1;
+    animation: changeBgINAKTIV 8s ease-in-out infinite;
+}
+
+.menu-dropdown {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: -2;
+}
+
+.menu-dropdown.active {
+    z-index: 2;
+    opacity: 100%;
+}
+
+.menu-dropdown-top {
+    position: relative;
+    top: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.menu-dropdown-bottom {
+    position: relative;
+    bottom: 50px;
+}
+
+.menu-dropdown ul {
+    list-style: none;
+    padding: 0px;
+   
+}
+
+.menu-dropdown ul li {
+    font-family: 'Avenir';
+    font-size: 18px;
+    list-style: none;
+    text-align: center;
+    padding: 10px;
+   
+}
+
+.menu-dropdown a {
+    text-decoration: none;
+    color:rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.menu-dropdown ul li:hover {
+    text-decoration: underline;
+   
+}
+
+.image-wrapper {
+    display:flex;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    justify-content: center;
+    background-color: #ffffff;
+    
+}
+
+.image img{
+    display:flex;
+    width: 400px;
+    height: 530px;
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.button {
+    display: flex;
+    position: relative;
+    top: 130px;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 30px;
+    font-family: 'Avenir';
+    border: 1px solid #ffffff;
+    color: black;
+    border-radius: 3px;
+    transform: rotate(90deg);
+    
+}
+
+.inspire-content {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template: 100px 1fr 100px / 1fr ;
+    background-color: #486856;
+    position: relative;
+    z-index: -1;
+}
+
+.sale-pitch {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.sale-pitch .inspire-text {
+    font-family: 'Begum';
+    text-transform: uppercase;
+    margin: 0px 15%;
+    height: 100%;
+    font-size: 30px;
+    display:flex;
+    align-items: center;
+    text-align: center;
+    max-width: 500px;
+    color: #588970;
+}
+
+.knapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: 120px;
+}
+
+.knapp p {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Avenir';
+    color: #ffffff;
+    
+}
+
+.knapp #right-arrow {
+    font-size: 30px;
+    font-family: 'Avenir';
+    position: relative;
+    left: 10px;
+    bottom: 4px;
+}
+
+.hantverket-content {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: -2;
+}
+.hantverket-image-wrapper {
+    display: flex;
+    justify-content: center;;
+    position: relative;
+    width: 60%;
+    top: 100px;
+    min-width: 450px;
+    max-height: 50%;
+    max-width: 600px;
+}
+.hantverket-image-wrapper img {
+    width: 100%;
+    z-index:-1;
+}
+
+.sale-pitch .hantverket-text {
+    font-family: 'Avenir';
+    font-weight: 100;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    height: 100%;
+    font-size: 16px;
+    display:flex;
+    text-align: center;
+    position: relative;
+    top: 120px;
+    width: 450px;
+    max-width: 600px;
+    color: black;
+ }
+ .sale-pitch .hantverket-text2 {
+    font-family: 'Avenir';
+    font-weight: 100;
+    height: 80%;
+    font-size: 16px;
+    display:none;
+    justify-content: space-between;
+    text-align: justify;
+    position: relative;
+    top: 80px;
+    width: 400px;
+    max-width: 600px;
+    color: black;
+ }
+
+ .knapp2 {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    bottom: -100px;
+ }
+
+ .knapp2 #right-arrow {
+    font-size: 30px;
+    font-family: 'Avenir';
+    position: relative;
+    left: 10px;
+    bottom: 4px;
+}
+
+.knapp2 p {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Avenir';
+    color: black;
+    
+}
+
+@keyframes changeBg {
+    0% {background-color: rgb(35, 46, 37)
+    }
+    25% {background-color: rgb(81, 97, 107)
+    }
+    50% {background-color: rgb(81, 97, 107)
+    }
+    75% {background-color: rgb(152, 149, 111)
+    }
+    100% {background-color: rgb(35, 46, 37)
+    }
+}
+
